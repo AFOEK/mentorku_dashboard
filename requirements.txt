@@ -1,2 +1,3 @@
 flask[all]
 flask_sqlalchemy
+dotenv

@@ -1,27 +1,25 @@
 import './App.css';
-import React, {useState, useEffect} from "react";
+import Dashboard from './components/dashboard/dashboard'
+import Login from './components/login/login';
+import React from "react";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
-  // const [data, setdata] = useState({
-  //   status:""
-  // });
-
-  // useEffect(()=>{
-  //   fetch("/").then((res) => res.json().then((data) => {
-  //     setdata({
-  //       status: data.status
-  //     });
-  //   }));
-  // }, []);
-
-  // return(
-  //   <div className='App'>
-  //     <header className='App-Header'>
-  //       <h1>Test</h1>
-  //       <p>{data.status}</p>
-  //     </header>
-  //   </div>
-  // );
+  return(
+    <div className='wrapper'>
+      <h1>Dashboard</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/">
+            <Dashboard />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;

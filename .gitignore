@@ -1,6 +1,6 @@
 # dependencies
-frontend/node_modules
-frontend/.pnp
+node_modules
+/frontend/.pnp
 .pnp.js
 
 # testing
