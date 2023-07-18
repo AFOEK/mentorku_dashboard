@@ -1,12 +1,11 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 export default function Dashboard(){
     return(
         <>
         <title>Dashboard</title>
-        <div className="header_title">
-            Dashboard
-        </div>
+        <Helmet><title>Login</title></Helmet>
         </>
     );
 }
