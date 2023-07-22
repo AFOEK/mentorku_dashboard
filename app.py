@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from dotenv import load_dotenv
 
@@ -9,11 +9,14 @@ load_dotenv()
 
 app = Flask(__name__)
 # app.config['SQLALCHEMY_DATABASE_URI'] = ''.join(os.environ.get("SQL_URI_TUNNEL"))
-# app.config['SQLALCHEMY_DATABASE_URI'] = ''.join(os.environ.get("SQL_URI_LOCAL"))
+app.config['SQLALCHEMY_DATABASE_URI'] = ''.join(os.environ.get("SQL_URI_LOCAL"))
+# app.config['SQLALCHEMY_DATABASE_URI'] = ''.join(os.environ.get("SQL_URI_PROD"))
 
-@app.route('/')
+@app.route('/login', methods=["POST","GET"])
 def login():
-    return "ok"
+    if request.method == 'POST':
+        data = request.get_json()
+        print(data)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8080)
+    app.run(host='0.0.0.0',debug=True, port=8080)

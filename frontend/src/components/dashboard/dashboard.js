@@ -1,11 +1,15 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 export default function Dashboard(){
     return(
         <>
         <title>Dashboard</title>
-        <Helmet><title>Login</title></Helmet>
+        <HelmetProvider>
+            <Helmet>
+                <title>Login</title>
+            </Helmet>
+        </HelmetProvider>
         </>
     );
 }
