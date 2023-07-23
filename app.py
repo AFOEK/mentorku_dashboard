@@ -17,6 +17,7 @@ def login():
     if request.method == 'POST':
         data = request.get_json()
         print(data)
+        return "OK"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',debug=True, port=8080)
